@@ -1,0 +1,9 @@
+SpringBean-SpringBoot-Maven
+SpringBean-Spring-Maven
+这两个项目用来做 写代码实现 Spring Bean 的装配 题目的。
+
+jdbc-hikari-springboot
+这个项目是用来做 JDBC 接口和数据库连接池 题目的。
+
+Student-Class-School-Starter
+这个项目是用来做 Student/Klass/School 实现自动配置和 Starter 题目的
