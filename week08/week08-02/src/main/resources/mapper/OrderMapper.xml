@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.geekbang.week0802.mapper.OrderMapper">
+    <insert id="insertOne" parameterType="com.geekbang.week0802.entity.Order">
+        insert into t_order
+        values (#{orderId}, #{userId})
+    </insert>
+
+    <select id="query" parameterType="com.geekbang.week0802.entity.Order" resultType="hashmap">
+        select order_id,user_id from t_order
+        where 1=1
+        <if test="order_id != null">
+            and order_id = #{orderId}
+        </if>
+        <if test="user_id != null">
+            and user_id = #{userId}
+        </if>
+    </select>
+
+    <delete id="delete" parameterType="long">
+        delete
+        from t_order
+        where order_id = #{orderId}
+    </delete>
+
+    <update id="update" parameterType="com.geekbang.week0802.entity.Order">
+        update t_order
+        set order_id = #{orderId} and user_id = #{userId}
+    </update>
+</mapper>
